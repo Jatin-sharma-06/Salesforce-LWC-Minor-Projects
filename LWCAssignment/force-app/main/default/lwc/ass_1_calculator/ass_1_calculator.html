@@ -1,0 +1,12 @@
+<template>
+    <div class="calculator" tabindex="0" onkeydown={handleKeyPress}>
+        <div class="display">{display}</div>
+        <div class="buttons">
+            <template for:each={buttons} for:item="btn">
+                <button key={btn} data-value={btn} onclick={handleClick}>
+                    {btn}
+                </button>
+            </template>
+        </div>
+    </div>
+</template>
