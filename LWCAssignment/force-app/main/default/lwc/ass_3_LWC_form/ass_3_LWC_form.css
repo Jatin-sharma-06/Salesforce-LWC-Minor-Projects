@@ -1,0 +1,35 @@
+.container {
+    padding: 15px;
+}
+
+/* Row with 2 fields */
+.row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* Each field takes equal space */
+.row lightning-input,
+.row lightning-combobox {
+    flex: 1;
+}
+
+/* Full width textarea */
+.full-width {
+    margin-bottom: 15px;
+}
+
+/* Button center */
+.btn-section {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Success message */
+.success {
+    margin-top: 15px;
+    color: green;
+    text-align: center;
+    font-weight: bold;
+}
