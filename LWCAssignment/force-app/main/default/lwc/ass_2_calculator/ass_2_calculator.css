@@ -1,0 +1,42 @@
+.calculator {
+    width: 260px;
+    margin: 40px auto;
+    padding: 15px;
+    border-radius: 12px;
+    background: #1e1e2f;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.display {
+    height: 50px;
+    background: #111;
+    color: #0f0;
+    font-size: 22px;
+    text-align: right;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+
+    overflow: hidden;       /* ✅ remove scroll */
+    white-space: nowrap;    /* keep in one line */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+button {
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: #2e2e3e;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4caf50;
+}

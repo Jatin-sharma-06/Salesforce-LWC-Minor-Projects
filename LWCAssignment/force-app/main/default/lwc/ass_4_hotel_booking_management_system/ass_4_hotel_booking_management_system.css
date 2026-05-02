@@ -1,0 +1,62 @@
+.container {
+    padding: 20px;
+    /* background: linear-gradient(135deg, #8d8d8d1a, #00000010);
+     */
+    background: #00204b;
+     min-height: 100vh;
+}
+
+/* Heading Center */
+.heading {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Horizontal Layout */
+.sections {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Common Section Style */
+.section {
+    flex: 1;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+/* Different Colors */
+.room-section {
+    background: linear-gradient(135deg, #bae1fd, #ffffff);
+}
+
+.form-section {
+    background: linear-gradient(135deg, #f8d4fd, #ffffff);
+}
+
+.summary-section {
+    background: linear-gradient(135deg, #d9ffdc, #ffffff);
+}
+
+/* Bottom Button */
+.footer {
+    padding: 0.75rem;
+    text-align: center;
+}
+
+
+.custom-button {
+    font-size: 18px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.custom-button:hover {
+    transform: scale(1.05);
+    font-color: #00204b;
+}

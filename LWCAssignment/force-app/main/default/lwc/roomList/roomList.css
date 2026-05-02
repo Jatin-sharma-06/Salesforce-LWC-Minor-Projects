@@ -1,0 +1,27 @@
+.custom-card {
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #1b2a4e;
+}
+
+.slds-box {
+    border-radius: 12px;
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.slds-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px #1b2a4e;
+}
+
+.slds-box p {
+    margin: 4px 0;
+    color: #1b2a4e;
+}

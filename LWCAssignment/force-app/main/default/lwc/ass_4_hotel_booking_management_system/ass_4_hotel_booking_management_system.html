@@ -1,0 +1,48 @@
+<template>
+    <div class="container">
+
+        <!-- Center Heading -->
+        <h1 class="heading">🏨 Hotel Booking Dashboard</h1>
+
+        <!-- Horizontal Sections -->
+        <div class="sections">
+
+            <!-- Section 1 -->
+            <div class="section room-section">
+                <c-room-list
+                    rooms={rooms}
+                    onroomselect={handleRoomSelect}>
+                </c-room-list>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="section form-section">
+                <c-booking-form
+                    selected-room={selectedRoom}
+                    onbookingchange={handleBookingChange}
+                    onbooknow={handleBookingSubmit}>
+                </c-booking-form>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="section summary-section">
+                <c-booking-summary
+                    room={selectedRoom}
+                    booking={bookingDetails}
+                    total={totalAmount}>
+                </c-booking-summary>
+            </div>
+
+        </div>
+
+        <!-- Bottom Button -->
+        <div class="footer">
+            <button 
+                class="slds-button slds-button_inverse custom-button"
+                onclick={handleBookingSubmit}>
+                Confirm Booking
+            </button>
+        </div>
+
+    </div>
+</template>

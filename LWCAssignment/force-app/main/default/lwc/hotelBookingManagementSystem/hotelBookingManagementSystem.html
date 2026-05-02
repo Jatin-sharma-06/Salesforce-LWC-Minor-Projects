@@ -1,0 +1,35 @@
+<template>
+    <div class="container">
+
+        <h1 class="heading">🏨 Hotel Booking Dashboard</h1>
+        
+        <div class="sections">
+
+            <div class="section room-section">
+                <c-room-list
+                    rooms={rooms}
+                    onroomselect={handleRoomSelect}>
+                </c-room-list>
+            </div>
+
+            <div class="section form-section">
+                <c-booking-form
+                    selected-room={selectedRoom}
+                    onbookingchange={handleBookingChange}
+                    onbooknow={handleBookingSubmit}>
+                </c-booking-form>
+            </div>
+
+            <div class="section summary-section">
+                <c-booking-summary
+                    room={selectedRoom}
+                    booking={bookingDetails}
+                    total={totalAmount}>
+                </c-booking-summary>
+            </div>
+
+        </div>
+
+
+    </div>
+</template>

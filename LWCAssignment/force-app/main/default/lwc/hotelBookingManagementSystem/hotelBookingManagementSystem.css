@@ -1,0 +1,37 @@
+.container {
+    padding: 20px;
+    background: #00204b;
+    min-height: 100vh;
+}
+
+.heading {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.sections {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.section {
+    flex: 1;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.room-section {
+    background: linear-gradient(135deg, #bae1fd, #ffffff);
+}
+
+.form-section {
+    background: linear-gradient(135deg, #f8d4fd, #ffffff);
+}
+
+.summary-section {
+    background: linear-gradient(135deg, #d9ffdc, #ffffff);
+}

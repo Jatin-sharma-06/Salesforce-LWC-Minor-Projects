@@ -1,0 +1,21 @@
+<template>
+    
+    <div class="slds-grid slds-wrap">
+
+        <template for:each={nameList} for:item="Name" for:index="index">
+    
+            <div key = {Name} class="slds-col slds-size_4-of-12">
+            
+                <lightning-card  title={Name}>
+            
+                    <p class="slds-p-horizontal_small">This is my list index of name  {index}</p>
+            
+                </lightning-card>
+            
+            </div>
+    
+        </template>
+    
+    </div>
+
+</template>

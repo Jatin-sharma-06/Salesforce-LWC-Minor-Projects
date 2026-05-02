@@ -1,27 +1,27 @@
 <template>
-    <lightning-card title="User Information Form">
+    <lightning-card>
+
+        <div class="Heading">
+            User Information Form
+        </div>
 
         <div class="container">
 
-            <!-- Row 1 -->
             <div class="row">
                 <lightning-input label="First Name" name="firstName" onchange={handleChange}></lightning-input>
                 <lightning-input label="Last Name" name="lastName" onchange={handleChange}></lightning-input>
             </div>
 
-            <!-- Row 2 -->
             <div class="row">
                 <lightning-input type="email" label="Email" name="email" onchange={handleChange}></lightning-input>
                 <lightning-input type="tel" label="Phone" name="phone" onchange={handleChange}></lightning-input>
             </div>
 
-            <!-- Row 3 -->
             <div class="row">
                 <lightning-input type="number" label="Age" name="age" onchange={handleChange}></lightning-input>
                 <lightning-input type="date" label="DOB" name="dob" onchange={handleChange}></lightning-input>
             </div>
 
-            <!-- Row 4 -->
             <div class="row">
                 <lightning-combobox
                     label="Gender"
@@ -38,13 +38,11 @@
                 </lightning-combobox>
             </div>
 
-            <!-- Row 5 -->
             <div class="row">
                 <lightning-input label="City" name="city" onchange={handleChange}></lightning-input>
                 <lightning-input label="State" name="state" onchange={handleChange}></lightning-input>
             </div>
 
-            <!-- Description (Full Width) -->
             <div class="full-width">
                 <lightning-textarea
                     label="Description"
@@ -53,7 +51,6 @@
                 </lightning-textarea>
             </div>
 
-            <!-- Submit Button -->
             <div class="btn-section">
                 <lightning-button
                     label="Submit"
@@ -62,7 +59,6 @@
                 </lightning-button>
             </div>
 
-            <!-- Success Message -->
             <template if:true={isSubmitted}>
                 <p class="success">Form Submitted Successfully ✅</p>
             </template>

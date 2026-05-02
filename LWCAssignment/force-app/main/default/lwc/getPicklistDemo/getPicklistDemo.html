@@ -1,0 +1,23 @@
+<template> 
+ 
+   <lightning-card title="Industry Picklist"> 
+ 
+       <div class="slds-p-around_medium"> 
+ 
+           <template if:true={industryOptions}> 
+ 
+               <template for:each={industryOptions} for:item="option"> 
+ 
+                   <p key={option.value}> 
+                       {option.label} 
+                   </p> 
+ 
+               </template> 
+ 
+           </template> 
+ 
+       </div> 
+ 
+   </lightning-card> 
+ 
+</template>

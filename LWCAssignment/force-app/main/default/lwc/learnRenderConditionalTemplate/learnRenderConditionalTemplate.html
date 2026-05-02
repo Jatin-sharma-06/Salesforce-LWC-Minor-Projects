@@ -1,0 +1,13 @@
+<template>
+
+    <lightning-button label="Show/Hide" title="Show/Hide" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+
+    <template if:true={isVisible}>
+
+        <lightning-card>
+            
+            <p class="slds-p-horizontal_small"> Mr. India</p>
+            <p slot="footer">Mister India aa gya.</p>
+        </lightning-card>
+    </template>
+</template>

@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Create Case Record">
+        <div class="slds-p-around_medium">
+
+            <lightning-record-edit-form 
+                object-api-name="Case" 
+                onsuccess={handleSuccess}>
+
+                <lightning-input-field field-name="Subject"></lightning-input-field>
+                <lightning-input-field field-name="Status"></lightning-input-field>
+                <lightning-input-field field-name="Priority"></lightning-input-field>
+                <lightning-input-field field-name="Description"></lightning-input-field>
+
+                <lightning-button 
+                    type="submit" 
+                    label="Create Case" 
+                    variant="brand"
+                    class="slds-m-top_medium">
+                </lightning-button>
+
+            </lightning-record-edit-form>
+
+        </div>
+    </lightning-card>
+</template>

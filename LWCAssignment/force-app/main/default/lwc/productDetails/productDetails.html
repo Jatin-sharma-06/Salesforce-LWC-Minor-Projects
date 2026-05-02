@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Product Details">
+        <template if:true={product}>
+            <p>Name: {product.Name}</p>
+            <p>Price: ₹{product.Price}</p>
+            <p>Category: {product.Category}</p>
+        </template>
+        <template if:false={product}>
+            <p>Select a product</p>
+        </template>
+    </lightning-card>
+</template>

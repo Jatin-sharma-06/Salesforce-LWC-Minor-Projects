@@ -1,0 +1,23 @@
+<template> 
+ 
+   <lightning-card title="Related Contacts"> 
+ 
+       <div class="slds-p-around_medium"> 
+ 
+           <template if:true={contacts}> 
+ 
+               <template for:each={contacts} for:item="contact"> 
+ 
+                   <p key={contact.id}> 
+                       {contact.fields.Name.value} 
+                   </p> 
+ 
+               </template> 
+ 
+           </template> 
+ 
+       </div> 
+ 
+   </lightning-card> 
+ 
+</template>

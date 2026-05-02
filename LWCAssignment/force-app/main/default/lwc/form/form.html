@@ -1,0 +1,70 @@
+<template>
+    <lightning-card>
+
+        <div class="Heading">
+            User Information Form
+        </div>
+
+        <div class="container">
+
+
+            <div class="row">
+                <lightning-input label="First Name" name="firstName" onchange={handleChange}></lightning-input>
+                <lightning-input label="Last Name" name="lastName" onchange={handleChange}></lightning-input>
+            </div>
+
+            <div class="row">
+                <lightning-input type="email" label="Email" name="email" onchange={handleChange}></lightning-input>
+                <lightning-input type="tel" label="Phone" name="phone" onchange={handleChange}></lightning-input>
+            </div>
+
+            <div class="row">
+                <lightning-input type="number" label="Age" name="age" onchange={handleChange}></lightning-input>
+                <lightning-input type="date" label="DOB" name="dob" onchange={handleChange}></lightning-input>
+            </div>
+
+            <div class="row">
+                <lightning-combobox
+                    label="Gender"
+                    name="gender"
+                    options={genderOptions}
+                    onchange={handleChange}>
+                </lightning-combobox>
+
+                <lightning-combobox
+                    label="Country"
+                    button-label="Select Country"
+                    name="country"
+                    options={countryOptions}
+                    onchange={handleChange}>
+                </lightning-combobox>
+            </div>
+
+            <div class="row">
+                <lightning-input label="City" name="city" onchange={handleChange}></lightning-input>
+                <lightning-input label="State" name="state" onchange={handleChange}></lightning-input>
+            </div>
+
+            <div class="full-width">
+                <lightning-textarea
+                    label="Description"
+                    name="description"
+                    onchange={handleChange}>
+                </lightning-textarea>
+            </div>
+
+            <div class="btn-section">
+                <lightning-button
+                    label="Submit"
+                    variant="brand"
+                    onclick={handleSubmit}>
+                </lightning-button>
+            </div>
+
+            <template if:true={isSubmitted}>
+                <p class="success">Form Submitted Successfully ✅</p>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

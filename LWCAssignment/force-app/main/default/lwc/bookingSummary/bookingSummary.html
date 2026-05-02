@@ -1,0 +1,33 @@
+<template>
+    <div class="custom-card">
+        <h2 class="section-title">Booking Summary</h2>
+
+        <div class="slds-p-around_medium">
+
+            <template if:true={room}>
+                <p><strong>Room:</strong> {room.Name}</p>
+                <p><strong>Type:</strong> {room.Room_Type__c}</p>
+            </template>
+
+            <template if:true={booking.name}>
+                <p><strong>Customer:</strong> {booking.name}</p>
+            </template>
+
+            <template if:true={totalDays}>
+                <p><strong>Days:</strong> {totalDays}</p>
+            </template>
+
+            <template if:true={booking.extraServices}>
+                <p><strong>Extra Services:</strong> ₹500</p>
+            </template>
+
+            <hr/>
+
+            <p class="slds-text-heading_medium">
+                Total: ₹{total}
+            </p>
+
+        </div>
+
+    </div>
+</template>

@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Product List">
+        <template for:each={products} for:item="prod">
+            <div key={prod.Id} class="item" onclick={handleSelect} data-id={prod.Id}>
+                <p><b>{prod.Name}</b></p>
+                <p>₹{prod.Price}</p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

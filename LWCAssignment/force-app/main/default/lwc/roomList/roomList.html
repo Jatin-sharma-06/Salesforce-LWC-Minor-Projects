@@ -1,0 +1,31 @@
+<template>
+    <div class="custom-card">
+        <h2 class="section-title">Rooms List</h2>
+
+        <div class="slds-grid slds-wrap">
+
+            <template for:each={rooms} for:item="room">
+                <div key={room.Id} class="slds-col slds-size_1-of-2 slds-p-around_small">
+
+                    <div class="slds-box">
+                        <p><strong>{room.Name}</strong></p>
+                        <p>Type: {room.Room_Type__c}</p>
+                        <p>Price: ₹{room.Price__c}</p>
+                    </div>
+
+                    <lightning-button
+                        label="Select"
+                        variant="brand"
+                        data-id={room.Id}
+                        onclick={handleSelect}>
+                    </lightning-button>
+
+                </div>
+
+            </template>
+
+        </div> 
+
+    </div>
+
+</template>

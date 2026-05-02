@@ -1,0 +1,30 @@
+/* Page background */
+.container {
+    background: #f4f6f9;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #16325c;
+    font-weight: 600;
+}
+
+lightning-card {
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card-spacing {
+    margin-bottom: 12px;
+}
+
+.item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.item:hover {
+    background-color: #eef4ff;
+}

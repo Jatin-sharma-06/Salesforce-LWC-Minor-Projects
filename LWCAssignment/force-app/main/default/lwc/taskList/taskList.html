@@ -1,0 +1,43 @@
+<template>
+    <div class="container">
+        <h2>Task List</h2>
+
+        <div class="input-section">
+            <lightning-input
+                placeholder="Enter task"
+                value={taskInput}
+                oninput={handleChange}>
+            </lightning-input>
+
+            <lightning-button
+                label="Add Task"
+                onclick={addTask}>
+            </lightning-button>
+        </div>
+
+        <template for:each={computedTasks} for:item="task">
+            <div key={task.id} class="task-row">
+
+                {task.id}
+
+                <input
+                    type="checkbox"
+                    checked={task.completed}
+                    data-id={task.id}
+                    onchange={toggleTask} />
+
+                <span class={task.className}>
+                    {task.name}
+                </span>
+
+                <button
+                    data-id={task.id}
+                    onclick={deleteTask}
+                    disabled={task.completed}>
+                    Delete
+                </button>
+
+            </div>
+        </template>
+    </div>
+</template>

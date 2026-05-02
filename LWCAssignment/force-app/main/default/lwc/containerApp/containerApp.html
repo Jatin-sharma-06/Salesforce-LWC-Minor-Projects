@@ -1,0 +1,39 @@
+<template>
+    <div class="slds-p-around_medium">
+
+        <h1 class="slds-text-heading_medium slds-text-align_center slds-m-bottom_medium">
+            🛒 Product Dashboard
+        </h1>
+
+        <div class="slds-grid slds-gutters">
+
+            <!-- LEFT COLUMN -->
+            <div class="slds-col slds-size_1-of-3">
+                <c-product-list></c-product-list>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="slds-col slds-size_2-of-3">
+
+                <div class="slds-grid slds-wrap slds-gutters">
+
+                    <div class="slds-col slds-size_1-of-1">
+                        <c-product-details></c-product-details>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-2">
+                        <c-cart-summary></c-cart-summary>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-2">
+                        <c-notification-panel></c-notification-panel>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</template>

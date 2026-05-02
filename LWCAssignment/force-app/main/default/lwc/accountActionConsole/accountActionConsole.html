@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Account Action Console">
+
+        <!-- Loader -->
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+
+        <!-- Datatable -->
+        <lightning-datatable
+            key-field="Id"
+            data={accounts}
+            columns={columns}
+            onrowaction={handleRowAction}>
+        </lightning-datatable>
+
+    </lightning-card>
+</template>

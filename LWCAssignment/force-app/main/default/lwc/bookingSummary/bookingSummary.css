@@ -1,0 +1,15 @@
+.card {
+    background: linear-gradient(135deg, #e8f5e9, #ffffff);
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.custom-card {
+    background: transparent;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}

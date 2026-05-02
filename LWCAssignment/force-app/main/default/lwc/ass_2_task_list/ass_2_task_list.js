@@ -10,6 +10,7 @@ export default class TaskList extends LightningElement {
     }
 
     addTask() {
+        console.log('Adding task...');
         if (!this.taskInput) return;
 
         const newTask = {
@@ -22,6 +23,8 @@ export default class TaskList extends LightningElement {
         this.taskInput = '';
 
         localStorage.setItem('tasks', JSON.stringify(this.tasks));
+        console.log(JSON.stringify(this.tasks));
+        console.log(this.tasks);
     }
 
     deleteTask(event) {
@@ -45,7 +48,7 @@ export default class TaskList extends LightningElement {
         localStorage.setItem('tasks', JSON.stringify(this.tasks));
     }
 
-    // ✅ Getter for computed values (fix for class issue)
+    //  Getter for computed values (fix for class issue)
     get computedTasks() {
         return this.tasks.map(task => {
             return {
