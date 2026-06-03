@@ -1,0 +1,43 @@
+<template>
+    <lightning-card title="State Map">
+        <div class="slds-p-around_medium">
+            <lightning-input
+                label="Enter Place"
+                placeholder="India, New York, Jaipur, Paris"
+                value={stateNames}
+                onchange={handleChange}
+                onkeypress={handleEnter}>
+            </lightning-input>
+            <!-- next line -->
+            <br/>  
+            <lightning-button
+                label="Submit"
+                variant="brand"
+                onclick={showLocations}>
+            </lightning-button>
+            <lightning-button
+                label="Clear"
+                variant="destructive"
+                onclick={clearLocations}
+                class="slds-m-left_small">
+            </lightning-button>
+            
+            <!-- next line -->
+            <br/>
+            
+            <!-- salesforce map-->
+            <div class="slds-p-around_medium slds-is-relative">
+                <template if:true={isLoading}>
+                    <lightning-spinner alt-text="Loading" size="medium" variant="brand"></lightning-spinner>
+                </template>
+                <template if:false={isLoading}>
+                    <lightning-map  
+                        map-markers={mapMarkers}
+                        zoom-level="3">
+                    </lightning-map>
+                </template>
+            </div>
+            
+        </div>
+    </lightning-card>
+</template>

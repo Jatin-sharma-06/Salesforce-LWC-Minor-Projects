@@ -1,0 +1,46 @@
+<template>
+    <lightning-card title="Location Finder" icon-name="utility:checkin">
+
+        <div class="slds-p-around_medium">
+
+            <!-- Search Section -->
+            <div class="slds-grid slds-gutters slds-grid_vertical-align-end slds-m-bottom_medium">
+
+                <div class="slds-col slds-size_1-of-2">
+
+                    <lightning-input
+                        type="text"
+                        label="Enter Places (e.g. Jaipur, London, New York)"
+                        value={inputValue}
+                        onchange={handleInputChange}
+                        onkeypress={handleKeyPress}>
+                    </lightning-input>
+
+                </div>
+
+                <div class="slds-col">
+
+                    <lightning-button
+                        label="Search"
+                        variant="brand"
+                        onclick={handleSubmit}>
+                    </lightning-button>
+
+                    <lightning-button
+                        label="Clear Map"
+                        variant="neutral"
+                        onclick={handleClear}
+                        class="slds-m-left_small">
+                    </lightning-button>
+
+                </div>
+
+            </div>
+
+            <!-- Map -->
+            <div class="map-container" lwc:dom="manual"></div>
+
+        </div>
+
+    </lightning-card>
+</template>

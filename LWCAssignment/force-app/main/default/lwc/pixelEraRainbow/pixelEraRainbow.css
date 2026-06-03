@@ -1,0 +1,110 @@
+.main {
+    text-align: center;
+    padding: 20px;
+    height: 400px;
+}
+
+/* Rainbow box */
+.rainbow {
+    position: relative;
+    width: 300px;
+    height: 150px;
+    margin: 20px 20px 20px 20px;
+    overflow: hidden;
+    
+}
+.arc {
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.arc1 {
+    width: 300px;
+    height: 300px;
+    top: 0;
+}
+.arc2 {
+    width: 260px;
+    height: 260px;
+    top: 20px;
+}
+.arc3 {
+    width: 220px;
+    height: 220px;
+    top: 40px;
+}
+.arc4 {
+    width: 180px;
+    height: 180px;
+    top: 60px;
+}
+.arc5 {
+    width: 140px;
+    height: 140px;
+    top: 80px;
+}
+.arc6 {
+    width: 100px;
+    height: 100px;
+    top: 100px;
+}
+.arc7 {
+    width: 60px;
+    height: 60px;
+    top: 120px;
+    background: white;
+}
+
+/* Spring + Summer colors */
+.red { background: red; }
+.orange { background: orange; }
+.yellow { background: yellow; }
+.green { background: green; }
+.blue { background: blue; }
+.indigo { background: indigo; }
+.violet { background: violet; }
+
+/* Winter blue shades */
+.blue1 { background: #001f4d; }
+.blue2 { background: #003366; }
+.blue3 { background: #004c99; }
+.blue4 { background: #0066cc; }
+.blue5 { background: #1a75ff; }
+.blue6 { background: #4d94ff; }
+.blue7 { background: #80b3ff; }
+
+/* Morning effect */
+.morning { filter: brightness(0.7); }
+
+/* Evening effect */
+.evening { filter: brightness(0.4); }
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* Directions */
+.north,
+.east,
+.south,
+.west{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:40px;
+}
+
+.east .rainbow{ transform:rotate(90deg); }
+.south .rainbow{ transform:rotate(180deg); }
+.west .rainbow{ transform:rotate(270deg); }
+
+.blankSpace {
+    height: 40px;
+}
+

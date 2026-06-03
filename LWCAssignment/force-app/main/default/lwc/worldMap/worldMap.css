@@ -1,0 +1,13 @@
+.map-container {
+    height: 600px;
+    width: 100%;
+    background-color: #f3f3f3;
+    border: 1px solid #c9c9c9;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.custom-pin {
+    background: transparent;
+    border: none;
+}

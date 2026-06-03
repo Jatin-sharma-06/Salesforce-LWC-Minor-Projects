@@ -1,0 +1,134 @@
+<template>
+    <div class="station-container">
+        <div class="header-section">
+            <img src={clockImg} alt="Clock" class="top-icon" onclick={handleClockClick}/>
+            <img src={stationMasterImg} alt="Station Master" class="top-icon" onclick={handleStationMasterClick}/>
+        </div>
+        
+        <template if:true={hasDisplayTime}>
+            <div class="time-banner">Current Time : {currentDisplayTime}</div>
+        </template>
+
+        <template for:each={platforms} for:item="platform">
+            <!-- create platform image -->
+            <div key={platform.id} class="platform-section"> 
+                <div class="platform-banner">{platform.label}</div>
+                <template if:true={platform.tracks.length}>
+                    <div class="tracks-container">
+                        <template for:each={platform.tracks} for:item="track">
+                            <div
+                                key={track.id}
+                                class="track-wrapper">
+                                <div class="track-number">Track {track.trackNumber}</div>
+                                <template if:true={track.hasTrain}>
+                                    <div class="train-container">
+                                        <img src={metroImg} alt="Metro" class="metro-image"/>
+                                    </div>
+                                </template>
+
+                                <template if:false={track.hasTrain}>
+                                    <img src={railwayLinesImg} alt="Track" class="track-image"/>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </div>
+    <div class="schedule-section">
+        <h2 class="schedule-heading">Train Schedule</h2>
+        <lightning-datatable
+            key-field="id"
+            data={tableData}
+            columns={columns}
+            hide-checkbox-column>
+        </lightning-datatable>
+    </div>
+
+    <template if:true={showClockModal}>
+        <section class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">Select Time</h2>
+                </header>
+
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-input
+                        type="time"
+                        label="Station Time"
+                        value={selectedTime}
+                        onchange={handleTimeInput}>
+                    </lightning-input>
+                </div>
+
+                <footer class="slds-modal__footer">                
+                    <lightning-button
+                        label="Cancel"
+                        onclick={handleClockModalClose}>
+                    </lightning-button>
+                    <lightning-button
+                        variant="brand"
+                        label="Apply"
+                        onclick={handleSetTime}>
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <template if:true={showStationMasterModal}>
+        <section class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">Station Master Panel</h2>
+                </header>
+
+                <!-- body -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-input
+                        label="Train Name"
+                        data-field="name"
+                        value={newTrain.name}
+                        onchange={handleNewTrainField}>
+                    </lightning-input>
+                    <lightning-input
+                        type="time"
+                        label="Arrival Time"
+                        data-field="arrival"
+                        value={newTrain.arrival}
+                        onchange={handleNewTrainField}>
+                    </lightning-input>
+                    <lightning-input
+                        type="time"
+                        label="Departure Time"
+                        data-field="departure"
+                        value={newTrain.departure}
+                        onchange={handleNewTrainField}>
+                    </lightning-input>
+                    <lightning-combobox
+                        label="Track"
+                        value={newTrain.track}
+                        options={trackOptions}
+                        data-field="track"
+                        onchange={handleNewTrainField}>
+                    </lightning-combobox>
+                </div>
+
+                <footer class="slds-modal__footer">
+                    <lightning-button
+                        label="Cancel"
+                        onclick={handleStationMasterModalClose}>
+                    </lightning-button>
+                    <lightning-button
+                        variant="brand"
+                        label="Add Train"
+                        onclick={handleAddTrain}>
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

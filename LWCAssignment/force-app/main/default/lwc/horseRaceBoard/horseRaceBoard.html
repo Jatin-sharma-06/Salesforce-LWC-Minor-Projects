@@ -1,0 +1,77 @@
+<template>
+    <lightning-card>
+        
+        <template if:true={isLoading}>
+            <lightning-spinner alt-text="Loading" size="medium" variant="brand"></lightning-spinner>
+        </template>
+        <template if:false={isLoading}>
+            <div class="header">
+                <button class="top-btn" data-view="races" onclick={handleViewChange}>Races</button>
+                <button class="top-btn" data-view="lots" onclick={handleViewChange}>My Lots</button>
+                <div class="date-box">{todayDate}</div>
+            </div>    
+            <template lwc:if={isRacesView}>
+                <div class="race-container">
+                    <template for:each={races} for:item="race">
+                        <div key={race.id} class="race-card">
+                            <div class="race-title">{race.name}</div>
+                            <template for:each={race.horses} for:item="horse">
+                                <div key={horse.id} class="horse-box">
+                                    <div class="horse-header">
+                                        <img src={horse.icon} class="bullet" alt="bullet"/>
+                                        <span class="horse-name"> {horse.name} </span>
+                                    </div>
+
+                                    <div class="status">Status : {race.status}</div>
+                                    
+                                    <button
+                                        class="select-btn"
+                                        data-raceid={race.id}
+                                        data-horseid={horse.id}
+                                        onclick={selectHorse}>
+                                        {horse.buttonLabel}
+                                    </button>
+                                </div>
+                            </template>
+                            <div class="race-buttons">
+                                <button
+                                    class="race-btn start-btn"
+                                    data-raceid={race.id}
+                                    onclick={startRace}
+                                    disabled={race.startDisabled}>
+                                    Start Race
+                                </button>
+                                <button
+                                    class="race-btn end-btn"
+                                    data-raceid={race.id}
+                                    onclick={endRace}
+                                    disabled={race.endDisabled}>
+                                    End Race
+                                </button>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+
+            <template lwc:if={isLotsView}>
+                <div class="my-lots">
+                    <template if:true={myLots.length}>
+                        <template for:each={myLots} for:item="lot">
+                            <div key={lot.id} class="lot-card">
+                                <p> <strong>Date :</strong> {lot.date} </p>
+                                <p> <strong>Race :</strong> {lot.raceName} </p>
+                                <p> <strong>Selected Horse :</strong> {lot.horseName} </p>
+                                <p> <strong>Winner :</strong> {lot.winner} </p>
+                            </div>
+                        </template>
+                    </template>
+                    <template if:false={myLots.length}>
+                        <p>No horse selected</p>
+                    </template>
+                </div>
+            </template>
+        </template>
+        
+    </lightning-card>
+</template>
